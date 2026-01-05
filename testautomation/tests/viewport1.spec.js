@@ -1,7 +1,5 @@
 const {test, expect} = require('@playwright/test')
- 
-test.use({viewport:{width:1000,height:400}})
- 
+
 test("Login Logout application Test", async({page})=>{
     await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
     await page.waitForTimeout(4000)
@@ -9,7 +7,7 @@ test("Login Logout application Test", async({page})=>{
     console.log("Height of the Browser :"+height);
     const width= await page.viewportSize().width
     console.log("Width of the Browser :"+width);
-   
+    
     //Perform Login Action
     await page.locator("input[placeholder='Username']").fill("Admin")
     await page.locator('input[type="password"]').fill("admin123")
@@ -20,5 +18,3 @@ test("Login Logout application Test", async({page})=>{
     await page.locator(':text("Logout")').click()
     await page.waitForTimeout(4000)
 })
- 
- 
