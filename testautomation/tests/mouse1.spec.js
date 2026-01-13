@@ -1,0 +1,16 @@
+const { test, expect } = require('@playwright/test')
+
+test('Mouse Movement operation', async({page})=>{
+    await page.goto("https://www.flipkart.com/")
+    await page.waitForTimeout(3000)
+    await page.locator("//span[normalize-space()='Login']").hover()
+    await page.waitForTimeout(3000)
+    await page.locator("//li[normalize-space()='Gift Cards']").click()
+    await page.waitForTimeout(3000)
+    await page.locator(':text("Electronics")').hover()
+    await page.waitForTimeout(3000)
+    await page.locator("//a[normalize-space()='Power Banks']").click()
+    await page.waitForTimeout(3000)
+    await expect(page.locator("//h1[normalize-space()='Power Banks']")).toHaveText("Power Banks")
+    await page.waitForTimeout(3000)
+})
