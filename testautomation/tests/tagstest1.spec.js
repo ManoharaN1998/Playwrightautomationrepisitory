@@ -1,6 +1,4 @@
 const {test, expect} = require('@playwright/test');
-const { clear } = require('node:console');
-const { SourceTextModule } = require('node:vm')
 
 test('First Test @sanity', async()=>{
     console.log("Sanity First Test case Execution!!");

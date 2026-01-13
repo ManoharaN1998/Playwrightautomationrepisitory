@@ -10,18 +10,18 @@ test.afterEach(async () =>{
     
 })
 
-test('First Test', async ({page})=>{
+test('First Test', async ({})=>{
     console.log("It is a First Test case!!!")
 })
 
-test('Second Test', async ({page})=>{
+test('Second Test', async ({})=>{
     console.log("It is a Second Test case!!!")
 })
 
-test('Third Test', async ({page})=>{
+test('Third Test', async ({})=>{
     console.log("It is a Third Test case!!!")
 })
 
-test('Fourth Test', async ({page})=>{
+test('Fourth Test', async ({})=>{
     console.log("It is a Fourth Test case!!!")
 })
