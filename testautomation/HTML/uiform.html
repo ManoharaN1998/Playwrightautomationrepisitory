@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Goat and Sheep Livestock Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .form-section {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 6px;
+            text-align: center;
+        }
+        th {
+            background: #ffeb3b;
+        }
+        .small-input {
+            width: 70px;
+        }
+        .submit-btn {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Goat and Sheep Livestock Details</h2>
+
+<div class="form-section">
+    <label>Month and Year (As on Stock)</label><br><br>
+    <input type="month">
+</div>
+
+<div class="form-section">
+    <table>
+        <thead>
+            <tr>
+                <th>Animal Type</th>
+                <th>Total Present</th>
+                <th>Died (Last 6 Months)</th>
+                <th>Reason of Death</th>
+                <th>Sold (Last 6 Months)</th>
+                <th>Consumed at Home</th>
+                <th>Approx. Sell Price (₹)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Adult Male</td>
+                <td><input class="small-input" type="number"></td>
+                <td><input class="small-input" type="number"></td>
+                <td>
+                    <select>
+                        <option value="">Select</option>
+                        <option>Disease</option>
+                        <option>Predator</option>
+                        <option>Other</option>
+                    </select>
+                </td>
+                <td><input class="small-input" type="number"></td>
+                <td><input class="small-input" type="number"></td>
+                <td><input class="small-input" type="number"></td>
+            </tr>
+
+            <tr>
+                <td>Adult Female</td>
+                <td><input class="small-input" type="number"></td>
+                <td><input class="small-input" type="number"></td>
+                <td>
+                    <select>
+                        <option value="">Select</option>
+                        <option>Disease</option>
+                        <option>Predator</option>
+                        <option>Other</option>
+                    </select>
+                </td>
+                <td><input class="small-input" type="number"></td>
+                <td><input class="small-input" type="number"></td>
+                <td><input class="small-input" type="number"></td>
+            </tr>
+
+            <tr>
+                <td>Kid / Buck</td>
+                <td><input class="small-input" type="number"></td>
+                <td><input class="small-input" type="number"></td>
+                <td>
+                    <select>
+                        <option value="">Select</option>
+                        <option>Disease</option>
+                        <option>Predator</option>
+                        <option>Other</option>
+                    </select>
+                </td>
+                <td><input class="small-input" type="number"></td>
+                <td><input class="small-input" type="number"></td>
+                <td><input class="small-input" type="number"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="form-section">
+    <label>Breed of Goat and Sheep</label><br><br>
+    <input type="checkbox"> Black Bengal
+    <input type="checkbox"> Ganjam
+    <input type="checkbox"> Malabari
+    <input type="checkbox"> Cross
+    <input type="checkbox"> Desi
+</div>
+
+<div class="form-section">
+    <label>Process of Selling</label><br><br>
+    <select>
+        <option value="">Select</option>
+        <option>Eye Estimated</option>
+        <option>Weighing</option>
+    </select>
+</div>
+
+<div class="form-section">
+    <label>Place of Sell</label><br><br>
+    <select>
+        <option value="">Select</option>
+        <option>Local Trader</option>
+        <option>Local Hatt</option>
+        <option>FPO</option>
+    </select>
+</div>
+
+<div style="text-align:center;">
+    <button class="submit-btn">Submit</button>
+</div>
+
+</body>
+</html>
