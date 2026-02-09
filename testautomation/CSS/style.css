@@ -1,0 +1,23 @@
+h2 {
+    color: blue;
+    text-align:center;
+}
+
+body{
+    background-color: wheat;
+}
+
+p#para1 {
+    font-size: 
+    25px;font-family: 
+    Arial;font-weight: 
+    bolder;color:burlywood
+}
+
+
+p.para2 {
+    font-size: 25px;
+    font-family: Arial;
+    font-weight: bolder;
+    color:yellow
+}
