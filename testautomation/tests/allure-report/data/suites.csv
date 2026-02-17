@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","26502","Login Logout application Test","","2026-02-14","passed","2026-02-14","","loginlogout.spec.js","",""
