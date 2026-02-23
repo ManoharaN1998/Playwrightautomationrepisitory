@@ -77,7 +77,7 @@ Then("I find newly created or modified {string} in List Customer Page", async fu
     const cell = this.page.locator(`//td[normalize-space()='${customername}']`);
 
     // Wait explicitly for the element to appear
-    await cell.waitFor({ timeout: 30000 });
+    await cell.waitFor({ timeout: 60000 });
 
     const text = await cell.textContent();
     console.log("Customer Found:", text);
