@@ -4,6 +4,10 @@ let browser,context, page
 const { CustomerPage } = require('../../pages/CustomerPage')
 const { LoginPage } = require('../../pages/LoginPage')
 const { HomePage } = require('../../pages/HomePage')
+const { Employeepage } = require('../../pages/Employeepage')
+const { Loginpage1 } = require('../../pages/Loginpage1')
+const { HomePage2 } = require('../../pages/HomePage2')
+const { AsyncLocalStorage } = require('node:async_hooks')
 
 When("I navigate Application url", async function(){
     await this.page.goto("https://sgtestinginstituteapp.onrender.com/")
@@ -100,3 +104,91 @@ When("I delete the newly created or modified {string} from List Customer Page", 
 When('I click on Edit option for newly created {string} in List Customer Page', async function(customername) {
     await this.customerPage.editButton(customername).click()
 });
+
+When ('I click on Employees Menu', async function() {
+    await this.EmployeePage.clickOnEmployeeMenu()  
+    await this.page.waitForTimeout(2000) 
+})
+
+When('I click on Add Employee button', async function(){
+    await this.EmployeePage.clickOnAddEmployee()
+    await this.page.waitForTimeout(2000) 
+})
+
+When ('I enter {string} in employee First Name text field', async function(firstname){
+    await this.EmployeePage.setEmployeeFirstName(firstname)
+    await this.page.waitForTimeout(2000) 
+
+})
+
+When ('I enter {string} in Last Name text field',async function (lastname){
+    await this.EmployeePage.setEmployeeLastName(lastname)
+    await this.page.waitForTimeout(2000) 
+})
+
+When ('I enter {string} in JobName text field', async function(JobName){
+    await this.EmployeePage.setEmployeeJobname(JobName)
+    await this.page.waitForTimeout(2000) 
+    
+})
+When('I enter {string} in EmaiId1 text field', async function(EmaiId1){
+    await this.EmployeePage.setEmployeeEmailId(EmaiId1)
+    await this.page.waitForTimeout(2000) 
+})
+
+When('I enter {string} in Age test field', async function(age){
+    await this.EmployeePage.setEmployeeAge(age)
+    await this.page.waitForTimeout(2000) 
+})
+
+When('I enter {string} in Contact Number text field', async function(contactnumber){
+    await this.EmployeePage.setEmployeeContactNumber(contactnumber)
+    await this.page.waitForTimeout(2000) 
+
+})
+
+When('I enter {string} in Salary text field', async function(salary){
+    await this.EmployeePage.setEmployeeSalary(salary)
+    await this.page.waitForTimeout(2000) 
+})
+
+When('I enter {string} in Department Name text field', async function(departmentname){
+    await this.EmployeePage.setEmployeeDepartmentName(departmentname)
+    await this.page.waitForTimeout(2000) 
+})
+
+When('I enter {string} in City Name text field', async function(cityname){
+    await this.EmployeePage.setEmployeeCityName(cityname)
+    await this.page.waitForTimeout(2000) 
+})
+
+When('I enter {string} in Address text field', async function(address){
+    await this.EmployeePage.setEmployeeAddress(address)
+    await this.page.waitForTimeout(2000) 
+})
+
+When('I click on save1 button', async function(){
+    await this.EmployeePage.saveEmployeeRecord()
+    await this.page.waitForTimeout(2000) 
+})
+
+Then('I find newly created or modified {string} in List Employee Page', async function(FirstName){
+    await this.page.waitForLoadState("networkidle");
+    const cell = this.page.locator(`//td[normalize-space()='${FirstName}']`);
+    await cell.waitFor({ timeout: 60000 });
+    const text = await cell.textContent();
+    console.log("Employee Found:", text);
+    expect(text).toContain(FirstName);
+})
+When('I delete the newly created or modified {string} from List Employee Page', async function(FirstName){
+    this.page.on("dialog", async(dialog)=>{
+        const message=await dialog.message()
+        console.log("Message :"+message);
+        await dialog.accept()
+        
+    })
+    // await this.employeePage.deleteButton(FirstName).click()
+    await this.page.locator("//button[normalize-space()='Delete']").click()
+    await this.page.waitForTimeout(2000) 
+    
+})

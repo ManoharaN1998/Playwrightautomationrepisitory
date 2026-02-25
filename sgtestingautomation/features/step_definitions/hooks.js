@@ -3,9 +3,12 @@ const { chromium } = require('playwright');
 const { CustomerPage } = require('../../pages/CustomerPage')
 const { LoginPage } = require('../../pages/LoginPage')
 const { HomePage } = require('../../pages/HomePage')
+const { EmployeePage } = require('../../pages/Employeepage')
+const { loginpage1 } = require('../../pages/Loginpage1')
+const { Homepage2 } = require('../../pages/HomePage2')
 setDefaultTimeout(60000)
 
-let browser, context, page
+let browser, context, page ,page1
 Before(async function () {
     browser = await chromium.launch({
         headless: false
@@ -15,6 +18,9 @@ Before(async function () {
     this.customerPage = new CustomerPage(this.page)
     this.loginPage = new LoginPage(this.page)
     this.homePage = new HomePage(this.page)
+    this.EmployeePage= new EmployeePage(this.page)
+    this.Loginpage1=new loginpage1(this.page)
+    this.Homepage2=new Homepage2(this.page)
 })
 
 After(async function () {
