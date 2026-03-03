@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","14184","Verify Login and Logout functioanlities","","2026-02-25","passed","2026-02-25","","","",""
+"","3460","Launch Browser and Navigate Application URL","","2026-02-25","passed","2026-02-25","","","",""
+"","45809","Verify Create Employee functioanlities","","2026-02-25","passed","2026-02-25","","","",""
+"","14701","Verify Login and Logout functioanlities with Multiple params","","2026-02-25","passed","2026-02-25","","","",""
+"","31196","Verify Create Customer functioanlities","","2026-02-25","passed","2026-02-25","","","",""
