@@ -15,23 +15,30 @@ When("I navigate Application url", async function(){
 
 Then("I find the login page", async function(){
     await expect(this.page).toHaveTitle("S G Software Testing Institute")
+    await this.page.waitForTimeout(2000) 
+
 })
 
 When("I enter {string} in username text field", async function(username){
     await this.loginPage.setUserName(username)
+    await this.page.waitForTimeout(2000) 
 })
 
 When("I enter {string} in password text field", async function(password){
     await this.loginPage.setPassword(password)
+    await this.page.waitForTimeout(2000) 
 })
 
 Then("I close application", async function(){
     await this.page.close()
     await context.close()
+    await this.page.waitForTimeout(2000) 
 })
 
 When("I click on SignIn button", async function(){
     await this.loginPage.clickOnSignIn()
+    await this.page.waitForTimeout(2000) 
+
 })
 
 Then("I find the Home page", async function(){
@@ -40,33 +47,45 @@ Then("I find the Home page", async function(){
 
 When("I click on Logout option", async function(){
     this.homePage.clickOnLogoutLink()
+    await this.page.waitForTimeout(2000) 
+
 })
 
 When("I click on Customer Menu", async function(){
     await this.customerPage.clickOnCustomerMenu()
+    await this.page.waitForTimeout(2000) 
+
 })
 
 When("I click on Add Customer button", async function(){
     await this.customerPage.clickOnAddCustomer()
+    await this.page.waitForTimeout(2000) 
 })
 
 When("I enter {string} in customer Name text field", async function(customername){
     await this.customerPage.setCustomerName(customername)
+    await this.page.waitForTimeout(2000) 
+
 })
 
 When("I enter {string} in emailID text field", async function(emailid){
     await this.customerPage.setCustomerEmailId(emailid)
+    await this.page.waitForTimeout(2000) 
 })
 
 When("I enter {string} in location text field", async function(location){
     await this.customerPage.setCustomerLocation(location)
+    await this.page.waitForTimeout(2000) 
 })
 When("I enter {string} in description text field", async function(description){
     await this.customerPage.setCustomerDescription(description)
+    await this.page.waitForTimeout(2000) 
 })
 
 When("I click on save button", async function(){
     await this.customerPage.saveCustomerRecord()
+    await this.page.waitForTimeout(2000) 
+
 })
 
 Then("I find newly created or modified {string} in List Customer Page", async function(customername){
@@ -98,11 +117,13 @@ When("I delete the newly created or modified {string} from List Customer Page", 
     })
     // await this.customerPage.deleteButton(customername).click()
     await this.page.locator(`//td[text()='${customername}']/following-sibling::td/following-sibling::td/following-sibling::td/following-sibling::td/button[2]`).click()
-    
+    await this.page.waitForTimeout(2000) 
 })
 
 When('I click on Edit option for newly created {string} in List Customer Page', async function(customername) {
     await this.customerPage.editButton(customername).click()
+    await this.page.waitForTimeout(2000) 
+
 });
 
 When ('I click on Employees Menu', async function() {
