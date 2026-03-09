@@ -1,0 +1,5 @@
+I would like to save teh new playwright testcases in tests folder.
+These testcases should execute based on library '@playwright/test'.
+The availble testcases in tests folder should execute till they should become pass
+the testcase uses Chromium browser tro execute test cases.
+the page object model classes should be written or createed in pages folder in testprojectmcp playwright project.

@@ -12,7 +12,9 @@ class LoginPage{
     async loginAction(){
         await this.page.fill(this.userName, "Admin")
         await this.page.fill(this.password, "admin123")
-        await this.page.click(this.loginButton)    
+        await this.page.click(this.loginButton)
+        console.log("File executed");
+    
     }
 
     async logoutAction(){
@@ -20,5 +22,4 @@ class LoginPage{
         await this.page.click(this.logout)
     }
 }
-
 module.exports = {LoginPage}
