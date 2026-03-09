@@ -24,4 +24,16 @@ let res3=a.filter((x) =>{
 })
 
 console.log(res3);
+console.log("+++++++++++++++++++++++++++++++++++");
 
+let c= [7,96,54,8,6,4,3]
+
+let even1 = function(c)
+{
+    if(c%2==0)
+    {
+        return c
+    }
+}
+let result=c.filter(even1)
+console.log(result)

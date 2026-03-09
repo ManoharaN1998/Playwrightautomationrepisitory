@@ -13,7 +13,7 @@ test("Handling Frames", async({page})=>{
     await page.waitForTimeout(3000)
     //Third Frame
     const frame3=await page.frameLocator("[name='classFrame']")
-    const content=await frame3.locator("//div[@class='description']//div[1]").textContent()
+    const content=await frame3.locator("div[class='description'] div[class='block']").textContent()
     console.log("Frame Content :"+content);
     
 })

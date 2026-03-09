@@ -33,7 +33,7 @@ test('Handle Confirm Dialog', async ({page})=>{
     await page.waitForTimeout(3000)
 })
 
-test.only('Handle Prompt Dialog', async({page})=>{
+test('Handle Prompt Dialog', async({page})=>{
     await page.goto("https://the-internet.herokuapp.com/javascript_alerts")
     await page.waitForTimeout(4000)
 
@@ -43,6 +43,18 @@ test.only('Handle Prompt Dialog', async({page})=>{
         console.log("Alert Message :"+message);
         await alertWindow.accept('WELCOME PLAYWRIGHT')
     })
+    await page.locator(':text-is("Click for JS Prompt")').click()
+    await page.waitForTimeout(4000)
+})
+
+test.only('Handle Prompt Dialog', async({page})=>{
+    await page.goto("https://the-internet.herokuapp.com/javascript_alerts")
+    await page.waitForTimeout(4000)
+
+    page.on('dialog', async dialog => {
+        console.log(dialog.message());
+        await dialog.accept();   // or dialog.dismiss()
+        })
     await page.locator(':text-is("Click for JS Prompt")').click()
     await page.waitForTimeout(4000)
 })

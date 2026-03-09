@@ -1,0 +1,14 @@
+{
+    "santu":{
+        "eid": 101,
+        "ename": "Santosh",
+        "job": "Manager",
+        "sal": 25000
+    },
+    "vinu":{
+        "eid": 102,
+        "ename": "Vinith",
+        "job": "Analyst",
+        "sal": 35000
+    }
+}

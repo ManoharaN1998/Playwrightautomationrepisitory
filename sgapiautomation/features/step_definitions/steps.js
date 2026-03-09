@@ -5,8 +5,8 @@ When("I authentic post request to get the access token", async function(){
     const apiContext = await request.newContext();
     this.response = await apiContext.post("https://sgtestinginstitute.onrender.com/api/v1/authenticate", {
         data: {
-            "username": "pgudi",
-            "password": "pgudi"
+            "username": "Manohara NN",
+            "password": "Manu1998@"
         }
     })
 })
