@@ -1,0 +1,58 @@
+{
+  "name": "orangehrm-automation-framework",
+  "version": "1.0.0",
+  "description": "Enterprise-level BDD Playwright automation framework for OrangeHRM with Cucumber, POM, and CI/CD ready setup",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env REPORT_PATH=reports/cucumber-report.json npx cucumber-js --require ./support/world.js --require ./support/hooks.js --require ./stepDefinitions/**/*.js --format @cucumber/pretty-formatter --format json:reports/cucumber-report.json",
+    "test:headed": "cross-env HEADLESS=false BROWSER=chromium npm run test",
+    "test:chrome": "cross-env BROWSER=chromium npm run test",
+    "test:firefox": "cross-env BROWSER=firefox npm run test",
+    "test:webkit": "cross-env BROWSER=webkit npm run test",
+    "test:all": "npm run test:chrome && npm run test:firefox && npm run test:webkit",
+    "test:parallel": "cross-env PARALLEL=true npm run test",
+    "test:smoke": "cross-env REPORT_PATH=reports/cucumber-report.json npx cucumber-js --require ./support/world.js --require ./support/hooks.js --require ./stepDefinitions/**/*.js --tags @smoke --format @cucumber/pretty-formatter --format json:reports/cucumber-report.json",
+    "test:regression": "cross-env REPORT_PATH=reports/cucumber-report.json npx cucumber-js --require ./support/world.js --require ./support/hooks.js --require ./stepDefinitions/**/*.js --tags @regression --format @cucumber/pretty-formatter --format json:reports/cucumber-report.json",
+    "test:login": "cross-env REPORT_PATH=reports/cucumber-report.json npx cucumber-js --require ./support/world.js --require ./support/hooks.js --require ./stepDefinitions/**/*.js --tags @login --format @cucumber/pretty-formatter --format json:reports/cucumber-report.json",
+    "test:dashboard": "cross-env REPORT_PATH=reports/cucumber-report.json npx cucumber-js --require ./support/world.js --require ./support/hooks.js --require ./stepDefinitions/**/*.js --tags @dashboard --format @cucumber/pretty-formatter --format json:reports/cucumber-report.json",
+    "test:employees": "cross-env REPORT_PATH=reports/cucumber-report.json npx cucumber-js --require ./support/world.js --require ./support/hooks.js --require ./stepDefinitions/**/*.js --tags @employees --format @cucumber/pretty-formatter --format json:reports/cucumber-report.json",
+    "test:report": "npm run test && npm run report:generate",
+    "test:headed:report": "cross-env HEADLESS=false BROWSER=chromium npm run test:report",
+    "report:generate": "node scripts/generateReport.js",
+    "report:open": "start \"\" \"reports\\cucumber-report.html\"",
+    "clean": "rimraf reports screenshots logs",
+    "clean:reports": "rimraf reports",
+    "lint": "eslint stepDefinitions pages support utils",
+    "lint:fix": "eslint --fix stepDefinitions pages support utils"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing",
+    "cucumber",
+    "bdd",
+    "orangehrm",
+    "pom"
+  ],
+  "author": "QA Team",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.0.0",
+    "@cucumber/pretty-formatter": "^1.0.0",
+    "@playwright/test": "^1.60.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.7",
+    "rimraf": "^5.0.9",
+    "winston": "^3.14.2"
+  },
+  "dependencies": {
+    "cli-table3": "^0.6.4",
+    "cucumber-html-reporter": "^7.1.1",
+    "json-stringify-safe": "^5.0.1"
+  }
+}
+
